@@ -12,43 +12,12 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ChainLogo } from "@/components/brand/Logo";
-import { LiveStats, type LiveStat } from "@/components/landing/LiveStats";
 import { ModuleBento } from "@/components/landing/ModuleBento";
 import { OrderTimeline } from "@/components/landing/OrderTimeline";
-import { createClient } from "@/lib/supabase/server";
-
-export const dynamic = "force-dynamic";
 
 const CHAIN_SLUG = "frich";
 
-async function loadStats(): Promise<LiveStat[]> {
-  const supabase = await createClient();
-  const [locations, inKitchen, products, employees] = await Promise.all([
-    supabase.from("locations").select("id", { count: "exact", head: true }).eq("is_active", true),
-    supabase
-      .from("orders")
-      .select("id", { count: "exact", head: true })
-      .in("status", ["confirmed", "in_kitchen", "ready"]),
-    supabase
-      .from("products")
-      .select("id", { count: "exact", head: true })
-      .eq("active", true),
-    supabase
-      .from("employees")
-      .select("id", { count: "exact", head: true })
-      .eq("active", true),
-  ]);
-  return [
-    { key: "locations", label: "Locales activos", value: locations.count ?? 0, accent: "yellow" },
-    { key: "in_kitchen", label: "Pedidos en cocina", value: inKitchen.count ?? 0, accent: "green", realtime: true },
-    { key: "team", label: "Equipo operativo", value: employees.count ?? 0, accent: "neutral" },
-    { key: "products", label: "Productos en carta", value: products.count ?? 0, accent: "yellow" },
-  ];
-}
-
-export default async function RootPage() {
-  const stats = await loadStats();
-
+export default function RootPage() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-background text-foreground">
       {/* Background ambient */}
@@ -63,9 +32,6 @@ export default async function RootPage() {
             <ChainLogo height={44} priority />
           </Link>
           <nav className="hidden items-center gap-1 text-xs uppercase tracking-[0.18em] text-muted-foreground md:flex">
-            <a href="#operacion" className="rounded-md px-3 py-2 transition hover:text-foreground">
-              Operación
-            </a>
             <a href="#modulos" className="rounded-md px-3 py-2 transition hover:text-foreground">
               Módulos
             </a>
@@ -125,29 +91,6 @@ export default async function RootPage() {
               </Button>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Live stats */}
-      <section id="operacion" className="relative z-10 mx-auto -mt-4 max-w-7xl px-6 md:-mt-8">
-        <div className="rounded-3xl border-2 border-border bg-card/95 p-6 backdrop-blur md:p-8">
-          <div className="mb-5 flex flex-wrap items-baseline justify-between gap-2">
-            <div>
-              <p className="text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground">
-                Snapshot de Frich · ahora mismo
-              </p>
-              <h2 className="mt-1 text-2xl font-bold tracking-tight md:text-3xl">
-                La operación real, no maqueta.
-              </h2>
-            </div>
-            <Link
-              href={`/c/${CHAIN_SLUG}/noc`}
-              className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-foreground/70 hover:text-frich-yellow-deep dark:hover:text-frich-yellow"
-            >
-              Abrir NOC <ArrowRight className="size-3.5" />
-            </Link>
-          </div>
-          <LiveStats stats={stats} />
         </div>
       </section>
 
