@@ -8,7 +8,6 @@ import {
   KeyRound,
   Mail,
   ScanLine,
-  Sparkles,
   Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -95,14 +94,9 @@ export default async function RootPage() {
       {/* Hero */}
       <section className="relative z-10 mx-auto max-w-7xl px-6 pt-12 pb-20 md:pt-24 md:pb-28">
         <div className="flex flex-col items-center gap-10 text-center md:gap-14">
-          <ChainLogo height={200} priority />
+          <ChainLogo height={200} priority className="mx-auto" />
 
           <div className="space-y-6">
-            <span className="inline-flex items-center gap-2 rounded-full border-2 border-frich-yellow/40 bg-card/95 px-4 py-1.5 text-xs uppercase tracking-[0.22em] text-foreground/80 shadow-sm">
-              <Sparkles className="size-3.5 text-frich-yellow-deep dark:text-frich-yellow" />
-              Producto studiOS · Hecho a medida · Mayo 2026
-            </span>
-
             <h1 className="font-display text-balance text-5xl leading-[0.95] tracking-tight md:text-7xl lg:text-[5.5rem]">
               El sistema operativo
               <br className="hidden md:block" />
