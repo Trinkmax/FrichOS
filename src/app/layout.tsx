@@ -34,7 +34,6 @@ export const metadata: Metadata = {
     "La capa operativa industrial de Frich. Cocina, cliente y repartidor sincronizados en tiempo real.",
   applicationName: "Frich OS",
   authors: [{ name: "studiOS" }],
-  themeColor: "#0B0B0E",
   manifest: "/manifest.webmanifest",
   icons: {
     icon: [{ url: "/brand/favicon.svg", type: "image/svg+xml" }],
