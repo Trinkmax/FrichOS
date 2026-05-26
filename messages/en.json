@@ -1,0 +1,68 @@
+{
+  "rings": {
+    "1": "Ring 1 · Core",
+    "2": "Ring 2 · Intelligence",
+    "3": "Ring 3 · Improvement"
+  },
+  "nav": {
+    "operations": "Operations",
+    "dispatcher": "Orchestrator",
+    "andon": "Andon",
+    "holds": "Quality holds",
+    "inventory": "Inventory",
+    "dispatch": "Dispatch",
+    "noc": "Virtual NOC",
+    "team": "Skills matrix",
+    "feedback": "Feedback",
+    "financial": "Financial",
+    "metrics": "Metrics",
+    "kaizen": "Kaizen",
+    "twin": "Digital twin"
+  },
+  "chrome": {
+    "account": "Account",
+    "chain": "Chain",
+    "locations": "Locations",
+    "turboMode": "Turbo Mode active"
+  },
+  "stations": {
+    "armado": "Assembly",
+    "plancha": "Grill",
+    "freidora": "Fryer",
+    "despacho": "Dispatch"
+  },
+  "modes": {
+    "normal": "Normal",
+    "turbo": "Turbo",
+    "degraded": "Degraded",
+    "opening": "Opening",
+    "closing": "Closing"
+  },
+  "channels": {
+    "rappi": "Rappi",
+    "pedidosya": "PedidosYa",
+    "salon": "Dine-in",
+    "whatsapp": "WhatsApp",
+    "web": "Web",
+    "kiosk": "Kiosk"
+  },
+  "common": {
+    "noResults": "No results",
+    "loading": "Loading…",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "back": "Back",
+    "next": "Next",
+    "demoNoLogin": "demo · no login"
+  },
+  "auth": {
+    "managementSignIn": "Management console",
+    "managementBody": "Access to location dashboards, virtual NOC, Kaizen, financial model and skills matrix. Authorized email only.",
+    "pinSignIn": "Tap your face and PIN",
+    "pinSession": "Ephemeral shift session",
+    "managementSignInCta": "Management sign in",
+    "pinSignInCta": "PIN sign in"
+  }
+}

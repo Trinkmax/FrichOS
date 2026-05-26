@@ -1,0 +1,6 @@
+- [User role](user_role.md) — sr. eng greenfield, espera juicio operativo concreto, no decide stack ni UI con el agente
+- [MVP Fase 1 scope](project_mvp_phase1_scope.md) — qué módulos sí, cuáles se difieren a Fase 2 y por qué
+- [KDS event schema](project_kds_event_schema.md) — eventos crudos mínimos día 1, no persistir agregados
+- [Canales Fase 1 carga manual](project_canales_fase1_carga_manual.md) — Rappi/PY entran vía tablet manual hasta tener API
+- [Planificación inversa calibración](project_planificacion_inversa_calibracion.md) — time-motion + calibración silenciosa antes de encender semáforos
+- [Defaults v0 baseline](project_defaults_v0.md) — tiempos, ventanas, DBR, Andon, KPIs y 18 RULES propuestos al 2026-05-25 (todos baseline_no_data)
